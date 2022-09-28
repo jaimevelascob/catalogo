@@ -5,11 +5,19 @@ from main.models import User, Article, Comments
 
 
 def index(request):
-    articles = Article.objects.all()
-    comments = Comments.objects.all()
+    return HttpResponse("Hola soy Index")
 
-    context = {
-        'articles' : articles,
-        'comments' : comments
-    }
-    return render(request, 'main.html', context)
+def signup(request):
+    return HttpResponse("Hola soy Signup")
+
+def signin(request):
+    return HttpResponse("Hola soy Signin")
+
+def aboutus(request):
+    return HttpResponse("Hola soy Aboutus")
+
+def subscribe(request):
+    return HttpResponse("Hola soy Subscribe")
+
+def news(request):
+    return HttpResponse("Hola soy News")
