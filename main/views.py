@@ -23,10 +23,6 @@ def subscribe(request):
 def news(request):
     return HttpResponse("Hola soy News")
 
-<<<<<<< HEAD
-def registro(request):
-    return render(request, 'registro.html')
-=======
 
 def article(request):
 	article = Article.objects.all()
@@ -35,4 +31,3 @@ def article(request):
 	}
 	return render(request, 'article.html', context)
 	
->>>>>>> b86020849197a9e95922316132b5d49c5ae3837d
