@@ -4,8 +4,8 @@ from django.shortcuts import render
 from main.models import User, Article, Comments
 
 
-def index(request):
-    return HttpResponse("Hola soy Index")
+def main(request):
+    return render(request, 'main.html')
     
 
 def signup(request):
@@ -22,7 +22,6 @@ def subscribe(request):
 
 def news(request):
     return HttpResponse("Hola soy News")
-
 
 def article(request):
 	article = Article.objects.all()
