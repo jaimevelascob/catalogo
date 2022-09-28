@@ -1,5 +1,6 @@
 from django.urls import path
 from main import views
+from .views import registro
 
 
 urlpatterns = [
@@ -8,5 +9,6 @@ urlpatterns = [
     path('signin', views.signin, name='signin'),
     path('<int:pk>', views.news, name='news'),
     path('aboutus', views.aboutus, name='aboutus'),
-    path('subscribe', views.subscribe, name='subscribe'),   
+    path('subscribe', views.subscribe, name='subscribe'),
+    path('registro/', registro, name="registro"),  
 ]

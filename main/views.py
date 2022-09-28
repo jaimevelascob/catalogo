@@ -21,3 +21,6 @@ def subscribe(request):
 
 def news(request):
     return HttpResponse("Hola soy News")
+
+def registro(request):
+    return render(request, 'registro.html')
