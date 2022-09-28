@@ -1,6 +1,4 @@
 from __future__ import unicode_literals
-from unicodedata import name
-from unittest.util import _MAX_LENGTH
 
 from django.db import models
 
