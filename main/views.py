@@ -6,6 +6,7 @@ from main.models import User, Article, Comments
 
 def index(request):
     return HttpResponse("Hola soy Index")
+    
 
 def signup(request):
     return HttpResponse("Hola soy Signup")
@@ -21,3 +22,12 @@ def subscribe(request):
 
 def news(request):
     return HttpResponse("Hola soy News")
+
+
+def article(request):
+	article = Article.objects.all()
+	context = {
+		'article' : article,
+	}
+	return render(request, 'article.html', context)
+	
