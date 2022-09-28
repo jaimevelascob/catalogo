@@ -1,5 +1,6 @@
-from unicodedata import name
 from __future__ import unicode_literals
+from unicodedata import name
+from unittest.util import _MAX_LENGTH
 
 from django.db import models
 
@@ -9,7 +10,7 @@ class Rols(models.Model):
 class User(models.Model):
     name = models.CharField(max_length=50, null = False, default = None)
     username = models.CharField(max_length=20, null = False, default = None)
-    password = models.CharField(null = False, default = None)
+    password = models.CharField(max_length=200,null = False, default = None)
     rol_id = models.ForeignKey(Rols, on_delete=models.CASCADE, null = False, default = None)
 
 class Article(models.Model):
