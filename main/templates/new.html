@@ -18,18 +18,14 @@
   </head>
   <body>
     <div class="bodyArticle">
-    
       <div class="article">
         <div class="article_text">
-        {% for articl in article %}
-          <h1 class="articleTitle">{{articl.content}}</h1>
-			<b><a href = "{% url 'news' articl.pk %}"> {{articl.content}} </a></b>
+          <h1 class="articleTitle">{{article.content}}</h1>
           <img
             class="article_photo"
-            src="{% static 'img/' %}{{articl.photo}}"
+            src="{% static 'img/' %}{{article.photo}}"
             alt="article"
           />
-          {% endfor %}
         </div>
       </div>
     </div>

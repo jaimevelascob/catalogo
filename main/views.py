@@ -21,8 +21,14 @@ def subscribe(request):
     return HttpResponse("Hola soy Subscribe")
 
 
-def news(request):
-    return HttpResponse("Hola soy News")
+def news(request, pk):
+	article = Article.objects.get(pk=pk)
+	
+	context = {
+		'article' : article,
+        
+	}
+	return render(request, 'new.html', context)
 
 
 def article(request):
