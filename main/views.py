@@ -40,4 +40,16 @@ def article(request):
         'form': form,
 
     }
+
+    if request.method == 'POST':
+        form = signUpForm(request.POST)
+        if form.is_valid():
+            new_comment = Comments(
+                article_id = form.cleaned_data['name'],
+                user = form.cleaned_data['username'],
+                comment = form.cleaned_data['password'],
+            )
+
+            new_comment.save()
+            
     return render(request, 'article.html', context)
