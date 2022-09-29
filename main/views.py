@@ -30,12 +30,26 @@ def news(request):
 
 
 def article(request):
-	article = Article.objects.all()
-	context = {
-		'article' : article,
-	}
-	return render(request, 'article.html', context)
+    article = Article.objects.all()
+    comments = Comments.objects.all()
+    form = signUpForm()
 
-def signup(request):
+    context = {
+        'article': article,
+        'comments': comments,
+        'form': form,
 
-	return render(request, 'signup.html')
+    }
+
+    if request.method == 'POST':
+        form = signUpForm(request.POST)
+        if form.is_valid():
+            new_comment = Comments(
+                article_id = form.cleaned_data['name'],
+                user = form.cleaned_data['username'],
+                comment = form.cleaned_data['password'],
+            )
+
+            new_comment.save()
+            
+    return render(request, 'article.html', context)
