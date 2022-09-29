@@ -19,3 +19,5 @@ class Comments(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE, null = False, default = None)
     user = models.CharField(max_length = 20, null = False, default = None)
     comment = models.TextField(null = False, default = None)
+
+    
