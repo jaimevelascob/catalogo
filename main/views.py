@@ -29,4 +29,7 @@ def article(request):
 		'article' : article,
 	}
 	return render(request, 'article.html', context)
-	
+
+def signup(request):
+
+	return render(request, 'signup.html')
