@@ -21,3 +21,4 @@ class signUpForm(forms.Form):
             "class": "form-control",
             "placeholder": "Password"
         }))
+        

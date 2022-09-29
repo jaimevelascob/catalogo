@@ -9,11 +9,11 @@ def main(request):
     return render(request, 'main.html')
 
 
-def signin(request):
+def signIn(request):
     return HttpResponse("Hola soy Signin")
 
 
-def aboutus(request):
+def aboutUs(request):
     return HttpResponse("Hola soy Aboutus")
 
 
@@ -56,19 +56,24 @@ def article(request):
             
     return render(request, 'article.html', context)
 
-def signup(request):
+def signUp(request):
 
     form = signUpForm()
+
+    context = {
+        'form': form, 
+    }
 
     if request.method == "POST":
         form = signUpForm(request.POST)
         if form.is_valid():
-            new_signUp = signUp()(
+            new_signUp = User()(
                 name=form.cleaned_data["name"],
-                Username=form.cleaned_data["username"],
+                username=form.cleaned_data["username"],
                 password=form.cleaned_data["password"],
+                rol_id=1
             )
 
             new_signUp.save()
 
-    return render(request, 'signup.html')
+    return render(request, 'signup.html', context)
