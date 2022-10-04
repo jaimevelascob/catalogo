@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es-ES">
   {%load static%}
+  
   <head>
     <meta charset="utf-8" />
    
@@ -15,20 +16,34 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="https://e00-marca.uecdn.es/assets/cover/marca/v0/main-cover.4fb83faac1e96c2f990f.css">
+    <link rel="stylesheet" href="https://e00-marca.uecdn.es/assets/v29/css/themes/flex-b-sponsorship-iberdrola/iberdrola-theme.css" type="text/css" media="all">
   </head>
+
+  <header class="main-header  site-header-cover js-cnav-header  portada  portada" data-ue-model="portada portada"><div class="main-top-header-container"><div class="main-header-container"><div class="main-site-logo">
+    </div>
+    <ul class="tools-header-corporative">
+      <li class="tools-corporative-subscription"><a href="" title="Suscripciones" class="tools-corporative-link">Suscríbete</a></li>
+      <li class="tools-corporative-login toolbar-login nav-login js-ueUserPanel"><a href="/signup" title="Login" class="tools-corporative-link js-loginClick"> <span>Iniciar sesión</span><i class="icon-login"></i></a>
+
+    </li></ul></aside></div></div><div class="main-nav-container"><div class="main-header-container"><nav class="js-navTab js-desdefixed js-hastafixed" data-jsue-navtab="true" role="navigation"><ul class="main-nav-tabs main-second-menu"><li class="main-tab main-tab-futbol">
+    </div></li></ul></nav><div class="main-header-search" aria-label="Buscador"><form action="" method="post" class="js-search-portada" role="search"><input type="search" name="q" placeholder="Buscar articulos" title="Buscar articulos"><div class="search-btn js-searchClick-portada"><a href="" title="Buscador"><span><i class="iconsvg iconsvg-search-a"></i><strong> Buscar</strong></span></a></div></form><span tabindex="0" class="close-btn js-close-btn-portada"><i class="iconsvg iconsvg-close-b"><span class="hidden-content">Cerrar</span></i></span></div></div></div><div class="breadcrumbs js-desdefixed js-hastafixed"><div class="container-breadcrumb js-submenu-toggle"><div class="js-contenido-toggle content-breadcrumb"><div class="clearfix  no-visible"><ul itemscope="" itemtype="http://schema.org/BreadcrumbList" class="tab-breadcrumb js-containerbreadcrumb"><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="home"><a itemscope="" itemtype="http://schema.org/Thing" itemprop="item" title="MARCA.com" href="https://www.marca.com?intcmp=MENUMIGA&amp;s_kw=home" id="bread-0"><span itemprop="name">Portada</span></a><span class="arrow"></span><meta itemprop="position" content="1"></li></ul><ul class="tab-breadcrumb tab-breadcrumb-list js-breadcrumb-submenu"></ul></div><input type="checkbox" id="show-more-breadcrumb" role="button" class="check-more-breadcrumb"><label for="show-more-breadcrumb" class="dropdown-submenu dropdown-more-breadcrumb js-botonera-more"><span class="show-more-breadcrumb-open">Más<i class="iconsvg iconsvg-more-b"></i></span><span class="show-more-breadcrumb-close">Cerrar<i class="iconsvg iconsvg-close-b"></i></span></label><div class="dropdown-container" data-items="10"><ul class="dropdown-content"><li><a data-section="Fútbol" href="https://www.marca.com/futbol.html?intcmp=MENUMIGA&amp;s_kw=futbol" title="Fútbol">Fútbol</a></li><li><a data-section="Fútbol Internacional" href="https://www.marca.com/futbol/futbol-internacional.html?intcmp=MENUMIGA&amp;s_kw=futbol-internacional" title="Fútbol Internacional">Fútbol Internacional</a></li><li><a data-section="Motor" href="https://www.marca.com/motor.html?intcmp=MENUMIGA&amp;s_kw=motor" title="Motor">Motor</a></li><li><a data-section="Baloncesto" href="https://www.marca.com/baloncesto.html?intcmp=MENUMIGA&amp;s_kw=baloncesto" title="Baloncesto">Baloncesto</a></li><li><a data-section="Polideportivo" href="https://www.marca.com/polideportivo.html?intcmp=MENUMIGA&amp;s_kw=polideportivo" title="Polideportivo">Polideportivo</a></li><li><a data-section="Radio MARCA" href="https://www.marca.com/radio.html?intcmp=MENUMIGA&amp;s_kw=radio-marca" title="Radio MARCA">Radio MARCA</a></li><li><a data-section="Tiramillas" href="https://www.marca.com/tiramillas.html?intcmp=MENUMIGA&amp;s_kw=tiramillas" title="Tiramillas">Tiramillas</a></li><li><a data-section="Marca Coches" href="https://www.marca.com/coches-y-motos.html?intcmp=MENUMIGA&amp;s_kw=marca-coches" title="Marca Coches">Marca Coches</a></li><li><a data-section="Gaming" href="https://www.marca.com/videojuegos.html?intcmp=MENUMIGA&amp;s_kw=gaming" title="Gaming">Gaming</a></li><li><a data-section="Bazar ofertas y regalos" href="https://www.marca.com/regalos-promociones.html?intcmp=MENUMIGA&amp;s_kw=bazar-ofertas-y-regalos" title="Bazar ofertas y regalos">Bazar ofertas y regalos</a></li></ul></div></div><div class="tab-title"><div class="container-header"><p class="tab-title-text js-tituloseccion">Portada</p></div></div></div></div><div class="percentage-bar" id="js_progressBar"></div><div class="ue-c-main-navigation ue-c-main-navigation__teams">
+    </ul></div></header>
+
+  
   <body>
     <div class="bodyArticle">
     
       <div class="article">
         <div class="article_text">
         {% for articl in article %}
-          <h1 class="articleTitle">{{articl.content}}</h1>
-			<b><a href = "{% url 'news' articl.pk %}"> {{articl.content}} </a></b>
-          <img
+        <br></br>
+        <a href = "{% url 'news' articl.pk %}"><h1 class="articleTitle">{{articl.content}}</a></h1>
+        <a href = "{% url 'news' articl.pk %}"><img
             class="article_photo"
             src="{% static 'img/' %}{{articl.photo}}"
             alt="article"
-          />
+          /></a>
           {% endfor %}
         </div>
       </div>

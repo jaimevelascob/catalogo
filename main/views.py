@@ -4,33 +4,6 @@ from django.shortcuts import render
 from main.models import User, Article, Comments
 from main.forms import signUpForm
 
-
-def main(request):
-    return render(request, 'main.html')
-
-
-def signIn(request):
-    return HttpResponse("Hola soy Signin")
-
-
-def aboutUs(request):
-    return HttpResponse("Hola soy Aboutus")
-
-
-def subscribe(request):
-    return HttpResponse("Hola soy Subscribe")
-
-
-def news(request, pk):
-	article = Article.objects.get(pk=pk)
-	
-	context = {
-		'article' : article,
-        
-	}
-	return render(request, 'new.html', context)
-
-
 def article(request):
     article = Article.objects.all()
     comments = Comments.objects.all()
@@ -56,6 +29,17 @@ def article(request):
             
     return render(request, 'article.html', context)
 
+
+def news(request, pk):
+	article = Article.objects.get(pk=pk)
+	
+	context = {
+		'article' : article,
+        
+	}
+	return render(request, 'new.html', context)
+
+
 def signUp(request):
 
     form = signUpForm()
@@ -73,7 +57,11 @@ def signUp(request):
                 password=form.cleaned_data["password"],
                 rol_id=1
             )
-
+            
             new_signUp.save()
 
     return render(request, 'signup.html', context)
+
+
+def signIn(request):
+    return HttpResponse("Hola soy Signin")
