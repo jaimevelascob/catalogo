@@ -21,4 +21,18 @@ class signUpForm(forms.Form):
             "class": "form-control",
             "placeholder": "Password"
         }))
-        
+
+class signInFrom(forms.Form):
+    username=forms.CharField(
+        max_length=20,
+        widget=forms.TextInput(attrs={
+            "class": "form-control",
+            "placeholder": "Username"
+        }))
+
+    password=forms.CharField(
+        max_length=20,
+        widget=forms.TextInput(attrs={
+            "class": "form-control",
+            "placeholder": "Password"
+        }))
