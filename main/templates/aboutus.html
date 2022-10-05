@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{%load static%}
+{% block content %}
+<div class="container-fluid bg-1 text-center">
+    <br>
+    <br>
+    <br>
+    
+    <img src="{% static 'img/newsLogo.png' %}" class="img-responsive img-circle margin" style="display:inline" alt="News 24/7" width="900" height="750">
+    <h1>Django Noticias</h1>
+    <br>
+  </div>
+
+  <div class="container-fluid bg-2 text-center">
+    <br>
+    <h3 class="margin">Bievenido a Noticias Django</h3>
+    <p>Noticias recientemente añadidas a la base de datos, todo y mas en</p><b>Articulos</b>
+  </div>
+
+{% endblock content %}
