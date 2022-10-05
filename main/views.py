@@ -9,7 +9,7 @@ from django.contrib.auth import login, logout, authenticate
 def articles(request):
     article = Article.objects.all()
     comments = Comments.objects.all()
-    articleID = Article.objects.all().filter(rol_id="2")
+    articleID = Article.objects.all().filter(rol_id="1")
 
     context = {
         'article': article,

@@ -7,8 +7,10 @@ class Rols(models.Model):
 
 
 class Article(models.Model):
+    title = models.TextField(null = False, default = None)
     content = models.TextField(null = False, default = None)
     photo = models.CharField(max_length=20, null = False, default = None)
+    rol_id = models.CharField(max_length=20, null = False, default = None)
 
 class Comments(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE, null = False, default = None)
