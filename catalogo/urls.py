@@ -21,5 +21,6 @@ from main import urls
 
 urlpatterns = [
     
+    path('', include('django.contrib.auth.urls')),
     path('', include('main.urls')),
 ]

@@ -1,26 +1,14 @@
 from django import forms
 
-class signUpForm(forms.Form):
-    name=forms.CharField(
-        max_length=50,
-        widget=forms.TextInput(attrs={
-            "class": "form-control",
-            "placeholder": "Name"
-        }))
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
-    username=forms.CharField(
-        max_length=20,
-        widget=forms.TextInput(attrs={
-            "class": "form-control",
-            "placeholder": "Username"
-        }))
+class signUpForm(UserCreationForm):
+    email = forms.EmailField(required=True)
 
-    password=forms.CharField(
-        max_length=20,
-        widget=forms.TextInput(attrs={
-            "class": "form-control",
-            "placeholder": "Password"
-        }))
+    class Meta:
+        model = User
+        fields = ["username", "email", "password1", "password2"]
 
 class signInFrom(forms.Form):
     username=forms.CharField(

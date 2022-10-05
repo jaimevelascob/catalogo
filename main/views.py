@@ -1,19 +1,18 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-from main.models import User, Rols, Article, Comments
+from main.models import Article, Comments
 from main.forms import signUpForm
 from main.forms import signInFrom
+from django.contrib.auth import login, logout, authenticate
+
 
 def articles(request):
     article = Article.objects.all()
     comments = Comments.objects.all()
-    form = signUpForm()
 
     context = {
         'article': article,
         'comments': comments,
-        'form': form,
 
     }
 
@@ -45,34 +44,17 @@ def signUp(request):
 
     form = signUpForm()
 
-    context = {
-        'form': form, 
-    }
-
     if request.method == "POST":
         form = signUpForm(request.POST)
         if form.is_valid():
-            new_signUp = User(
-                name=form.cleaned_data["name"],
-                username=form.cleaned_data["username"],
-                password=form.cleaned_data["password"],
-                rol_id = Rols("1")
-            )
-            
-            new_signUp.save()
+            user = form.save()
+            login(request, user)
 
-    return render(request, 'signup.html', context)
+            return redirect("/")
 
+    else:      
+        return render(request, 'registration/signup.html', {"form" : form})
 
-def signIn(request):
-
-    form = signInFrom()
-
-    context = {
-        'form': form, 
-    }
-
-    return render(request, 'login.html', context)
 
 
 def aboutUs(request):

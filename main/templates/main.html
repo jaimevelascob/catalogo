@@ -50,13 +50,19 @@
                 <a class="nav-link active" href="/aboutus">Sobre Nosotros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/signup">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="/signin">Login</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link disabled" href ="/subscribe">Premium</a>
+              </li>
+              <li>     
+                {% if user.is_authenticated %}
+                <span class="navbar-text">Logged in as {{user.username}} | </span>
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
+                {% endif %}
               </li>
       
             </ul>
