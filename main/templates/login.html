@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{%load static%}
+{% block content %}
+
+<div class="signInFrom">
+        <form action="/signin" method="GET">
+          {% csrf_token %}
+          <br>
+          <br>
+      
+      
+          <h1 class="title">Signin</h1>
+    
+          <div class="inputContainer" >
+            {{form.username}}
+        </div>
+
+        <br></br>
+        
+        <div class="inputContainer" >
+            {{form.password}}
+        </div>
+
+        <br></br>
+    
+          <button type="submit" class="submitBtn"> Ingresar </button>
+        </form>
+      </div>  
+     
+
+{% endblock content %}

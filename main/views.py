@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 from main.models import User, Rols, Article, Comments
 from main.forms import signUpForm
+from main.forms import signInFrom
 
 def articles(request):
     article = Article.objects.all()
@@ -64,7 +65,14 @@ def signUp(request):
 
 
 def signIn(request):
-    return HttpResponse("Hola soy Signin")
+
+    form = signInFrom()
+
+    context = {
+        'form': form, 
+    }
+
+    return render(request, 'login.html', context)
 
 
 def aboutUs(request):
