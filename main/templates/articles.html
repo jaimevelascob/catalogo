@@ -10,15 +10,29 @@
       </div>
       <div class="col-sm-8">
 
-        {% for articl in article %}
-          <a href = "{% url 'article' articl.pk %}"><h1 class="mt-5">{{articl.content}}</a></h1>
-          <a href = "{% url 'article' articl.pk %}"><img
-              class="article_photo"
-              src="{% static 'img/' %}{{articl.photo}}"
-              alt="article"
-            /></a>
+        {% if user.is_authenticated %} 
+          {% for articl in article %}
+
+            <a href = "{% url 'article' articl.pk %}"><h1 class="mt-5">{{articl.title}}</a></h1>
+            <a href = "{% url 'article' articl.pk %}"><img
+                class="article_photo"
+                src="{% static 'img/' %}{{articl.photo}}"
+                alt="article"
+              /></a>
+              
+            {% endfor %}
+        {% else %}
+          {% for articl in articleID %}
+
+              <a href = "{% url 'article' articl.pk %}"><h1 class="mt-5">{{articl.title}}</a></h1>
+              <a href = "{% url 'article' articl.pk %}"><img
+                  class="article_photo"
+                  src="{% static 'img/' %}{{articl.photo}}"
+                  alt="article"
+                /></a>
+
           {% endfor %}
-      
+        {% endif %}
         </div>
       </div>
     </div>

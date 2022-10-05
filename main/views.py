@@ -9,11 +9,12 @@ from django.contrib.auth import login, logout, authenticate
 def articles(request):
     article = Article.objects.all()
     comments = Comments.objects.all()
+    articleID = Article.objects.all().filter(rol_id="2")
 
     context = {
         'article': article,
         'comments': comments,
-
+        'articleID' : articleID,
     }
 
     if request.method == 'POST':
@@ -35,7 +36,6 @@ def article(request, pk):
 	
 	context = {
 		'article' : article,
-        
 	}
 	return render(request, 'article.html', context)
 
